@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="jdbc.batch_size">20</property>
+		<property name="connection.autocommit">true</property>
+
+		<!-- 显示sql语句 -->
+		<property name="show_sql">true</property>
+		<property name="connection.useUnicode">true</property>
+		<property name="connection.characterEncoding">UTF-8</property>
+
+		<!-- 缓存设置 -->
+		<property
+			name="cache.provider_configuration_file_resource_path">
+			/ehcache.xml
+		</property>
+		<!-- Hibernate4，这里和Hibernate3不一样，要特别注意！！！ -->
+		<property name="hibernate.cache.region.factory_class">
+			org.hibernate.cache.EhCacheRegionFactory
+		</property>
+		<!-- Hibernate3 -->
+		<!-- <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property> -->
+		<property name="cache.use_query_cache">true</property>
+
+		<!-- 配置C3P0 -->
+		<property name="hibernate.connection.provider_class">
+			org.hibernate.connection.C3P0ConnectionProvider
+		</property>
+		<property name="hibernate.c3p0.max_size">5</property>
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.max_statements">3</property>
+		<property name="hibernate.c3p0.timeout">10</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.idle_test_periodt">10</property>
+
+
+		<!-- 领域对象：Annotation注解方式-->
+		<mapping resource="com/butshow/entity/hbm/UserDefault.hbm.xml" />
+		<mapping resource="com/butshow/entity/UserDefault.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>

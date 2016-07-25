@@ -1,0 +1,36 @@
+<!--
+MyEclipse Database Explorer Driver Repository
+-->
+
+<Beans version="1.0">
+    <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
+        <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>-49538104:1514928de90:-7f70</string>
+        </identifier>
+        <jarFileName/>
+        <jarFileNames Indexed="true">
+            <Bean Class="net.sourceforge.squirrel_sql.fw.util.beanwrapper.StringWrapper">
+                <string>E:\jar\mysql-connector-java-5.1.37-bin.jar</string>
+            </Bean>
+        </jarFileNames>
+        <name>MySQL Connector/J01</name>
+        <url>jdbc:mysql://114.215.237.131:3306/root</url>
+    </Bean>
+    <Bean Class="com.genuitec.eclipse.sqlexplorer.utils.ConnectionProfile">
+        <activate>false</activate>
+        <driverIdentifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>-49538104:1514928de90:-7f70</string>
+        </driverIdentifier>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>4a89d67c:1514e4c8138:-7fd9</string>
+        </identifier>
+        <name>ButShow</name>
+        <password encryption="true">CGesvKUtVxoAaF+r6sFNGA==</password>
+        <promptForPassword>false</promptForPassword>
+        <schema Indexed="true"/>
+        <schemaDisplayPolicy>0</schemaDisplayPolicy>
+        <url>jdbc:mysql://114.215.237.131:3306</url>
+        <userName>root</userName>
+    </Bean>
+</Beans>

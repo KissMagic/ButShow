@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+validator.Checked=WebRoot/angular/vendor/modules/textAngular/textAngular.min.js,WebRoot/angular/vendor/jquery/jquery.min.js,WebRoot/angular/vendor/jquery/select2/select2.min.js,WebRoot/angular/l10n/zh_CN.js,WebRoot/angular/vendor/jquery/charts/flot/jquery.flot.tooltip.min.js,WebRoot/angular/vendor/libs/moment.min.js,WebRoot/angular/vendor/jquery/jvectormap/jquery-jvectormap.min.js,WebRoot/angular/l10n/it_IT.js,WebRoot/angular/vendor/jquery/charts/flot/jquery.flot.min.js,WebRoot/angular/l10n/de_DE.js,WebRoot/plugins/jquery/jquery-2.1.4.min.js,WebRoot/angular/vendor/modules/textAngular/textAngular-sanitize.min.js,WebRoot/angular/l10n/en.js,WebRoot/angular/vendor/jquery/jquery-2.1.4.min.js
+validator.Unchecked=

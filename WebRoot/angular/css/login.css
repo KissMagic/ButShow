@@ -1,0 +1,55 @@
+.bodyDiv {
+	margin: 3% 37% 18%;
+}
+
+.logoImg {
+	width: 80px;
+	height: 60px;
+	background-color: #FF6600;
+	background-position: center center;
+	background-size: 100px auto;
+}
+
+.logoDiv {
+	width: 49%;
+	height: 17%;
+	background-color: #FFFFFF;
+}
+
+.logoFont {
+	margin: auto 0px 0px 85px;
+	width: 80px;
+	font-family: STXingkai;
+}
+
+.formDiv {
+	margin-left: -23px;
+	width: 85%;
+	height: 29%;
+	background-color: #FFFFFF;
+}
+
+.logoLabel {
+	width: 60px;
+}
+
+.logoInput {
+	width: 180px;
+}
+
+.logoButton {
+	width: 180px;
+	background-color: #E87A5F;
+}
+
+.logoThird {
+	width: 65px;
+	font-size: 12;
+	font-family: inherit;
+}
+
+.logoThirdImg {
+	margin:auto 5px auto 5px;
+	width: 18px;
+	height: 18px;
+}

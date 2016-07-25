@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0.1//EN" "validator_1_0_1.dtd" >
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- 默认的磁盘缓存目录  xsi:noNamespaceSchemaLocation="../config/ehcache.xsd"-->
+    <diskStore path="java.io.tmpdir"/>
+ 
+    <!--
+    Mandatory Default Cache configuration. These settings will be applied to caches
+    created programmtically using CacheManager.add(String cacheName)
+    -->
+    <defaultCache
+         maxElementsInMemory="10000"
+         eternal="false"
+         timeToIdleSeconds="120"
+         timeToLiveSeconds="120"
+         overflowToDisk="true"
+         maxElementsOnDisk="10000000"
+         diskPersistent="false"
+         diskExpiryThreadIntervalSeconds="120"
+         memoryStoreEvictionPolicy="LRU"
+     />
+     
+     <!-- 用于整合Hibernate二级缓存：缓存领域对象 -->
+    <cache name="com.hysd.domain.Customer"
+        maxElementsInMemory="10000"
+        eternal="false"
+        overflowToDisk="false"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600" />
+     
+    <cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+           maxElementsInMemory="5000"
+           eternal="true"
+           overflowToDisk="true" />
+    <cache name="org.hibernate.cache.internal.StandardQueryCache"
+           maxElementsInMemory="10000"
+           eternal="false"
+           timeToLiveSeconds="120"
+           overflowToDisk="true" />  
+     
+    <!--
+    java文件注解查找cache方法名的策略：如果不指定java文件注解中的region="ehcache.xml中的name的属性值", 
+    则使用name名为com.lysoft.bean.user.User的cache(即类的全路径名称), 如果不存在与类名匹配的cache名称, 则用 defaultCache
+    如果User包含set集合, 则需要另行指定其cache
+    例如User包含citySet集合, 则也需要
+    添加配置到ehcache.xml中
+    -->   
+    <cache name="javaClassName" maxElementsInMemory="2000" eternal="false"
+           timeToIdleSeconds="120" timeToLiveSeconds="120"
+           overflowToDisk="true" />  
+    
+    
+
+<!-- 
+        配置自定义缓存
+        maxElementsInMemory：缓存中允许创建的最大对象数
+        eternal：缓存中对象是否为永久的，如果是true，超时设置将被忽略，对象从不过期。
+        overflowToDisk：内存不足时，是否启用磁盘缓存。
+        timeToIdleSeconds：缓存数据的钝化时间，也就是在一个元素消亡之前，
+                    两次访问时间的最大时间间隔值，这只能在元素不是永久驻留时有效，
+                    如果该值是0，就意味着元素可以停顿无穷长的时间。
+                    （即：设置缓存中的对象在过期之前的最大空闲时间，单位秒）
+        timeToLiveSeconds：缓存数据的生存时间，也就是一个元素从构建到消亡的最大时间间隔值，
+                    这只能在元素不是永久驻留时有效，如果该值是0，就意味着元素可以停顿无穷长的时间。
+                    （即：设置缓存中的对象在过期之前的最大生存时间，单位秒）
+        memoryStoreEvictionPolicy：缓存满了之后的淘汰算法。共有三种：FIFO-先进先出，LFO-最少使用的出，LRO-最久没用的出。
+ -->
+</ehcache>
